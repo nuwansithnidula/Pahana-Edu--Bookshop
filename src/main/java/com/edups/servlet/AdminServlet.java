@@ -53,9 +53,7 @@ public class AdminServlet extends HttpServlet {
                 case "update":
                     service.updateAdmin(admin);
                     break;
-                case "delete":
-                    service.deleteAdmin(Integer.parseInt(id));
-                    break;
+
             }
 
             resp.sendRedirect("admin/ManageAdmins.jsp");

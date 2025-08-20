@@ -127,18 +127,5 @@ public class AdminService {
         return false;
     }
 
-    // Delete Admin
-    public boolean deleteAdmin(int id) {
-        String query = "DELETE FROM admin WHERE id = ?";
-        try (Connection connection = DBConnection.getConnection();
-             PreparedStatement stmt = connection.prepareStatement(query)) {
 
-            stmt.setInt(1, id);
-            return stmt.executeUpdate() > 0;
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
 }
