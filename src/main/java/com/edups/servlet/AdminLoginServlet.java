@@ -36,9 +36,15 @@ public class AdminLoginServlet extends HttpServlet {
         if (admin != null && admin.getPassword().equals(password)) {
             HttpSession session = request.getSession();
             session.setAttribute("admin", admin);
+
+            // ✅ Success message (flash) – read & clear on the next page
+            session.setAttribute("successMessage", "Login successful. Welcome, " + admin.getName() + "!");
+
             response.sendRedirect(request.getContextPath() + "/admin/dashboard.jsp");
         } else {
+            // ❌ Error message stays request-scoped so it shows on the same page
             request.setAttribute("error", "Invalid credentials");
+
             RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/AdminLogin.jsp");
             dispatcher.forward(request, response);
         }
