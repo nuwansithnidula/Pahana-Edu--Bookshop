@@ -134,8 +134,7 @@
     %>
 
     <h2>Dashboard Options</h2>
-    <div class="options">
-        <a class="tile" href="<%= ctx %>/EmployeeList.jsp">Employees</a>
+    <div class="options"> 
         <a class="tile" href="<%= ctx %>/CustomerDetails.jsp">Customers</a>
         <a class="tile" href="<%= ctx %>/ItemList.jsp">Products</a>
         <a class="tile" href="<%= ctx %>/GenerateBill.jsp">Calculate Bill</a>
